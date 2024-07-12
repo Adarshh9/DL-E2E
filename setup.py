@@ -19,11 +19,11 @@ def get_requirements(file_path:str)->List[str]:
 with open("README.md" ,"r" ,encoding="utf-8") as f:
     long_description = f.read()
 
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 
 REPO_NAME = "DL-E2E"
 AUTHOR_USER_NAME = "Adarshh9"
-SRC_REPO = "cnnClassifier"
+SRC_REPO = "cnnClassifierr"
 AUTHOR_EMAIL = "akesherwani900@gmail.com"
 
 setuptools.setup(
