@@ -1,6 +1,10 @@
 from cnnClassifierr.constants import  *
-from cnnClassifierr.utils.common import read_yaml ,create_directories
-from cnnClassifierr.entity.config_entity import (DataIngestionConfig ,PrepareBaseModelConfig ,PrepareCallbacksConfig)
+from cnnClassifierr.utils.common import read_yaml ,create_directories ,save_json
+from cnnClassifierr.entity.config_entity import (DataIngestionConfig ,
+                                                PrepareBaseModelConfig ,
+                                                PrepareCallbacksConfig ,
+                                                TrainingConfig,
+                                                EvaluationConfig)
 import os
 
 class ConfigurationManager:
@@ -80,3 +84,14 @@ class ConfigurationManager:
         )
 
         return training_config
+    
+    def get_validation_config(self) -> EvaluationConfig:
+        eval_config = EvaluationConfig(
+            path_of_model= 'artifacts/training/model.h5',
+            training_data= 'artifacts/data_ingestion/Chicken-fecal-images', 
+            all_params= self.params,
+            params_image_size= self.params.IMAGE_SIZE,
+            params_batch_size= self.params.BATCH_SIZE,
+        )
+
+        return eval_config

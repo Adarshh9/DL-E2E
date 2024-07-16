@@ -1,5 +1,5 @@
 from cnnClassifierr.entity.config_entity import PrepareBaseModelConfig ,TrainingConfig
-from cnnClassifierr.components.prepare_base_model import PrepareBaseModel
+from cnnClassifierr.components.prepare_callbacks import PrepareCallback
 from cnnClassifierr.components.training import Training
 from cnnClassifierr.config.configuration import ConfigurationManager
 from cnnClassifierr import logger
